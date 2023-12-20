@@ -265,8 +265,8 @@ const Quiz = sequelize.define(
     quiz_view: {
       type: DataTypes.BIGINT,
     },
-    quiz_hash: {
-      type: DataTypes.STRING(255),
+    date: {
+      type: DataTypes.DATE(),
     },
   },
   {
@@ -489,9 +489,9 @@ app.post("/createQuiz", async (req, res, next) => {
     t_id: t_id,
     quiz_data: JSON.stringify(quiz_data),
     quiz_view: 0,
-    quiz_hash: Date.now(),
+    date: Date.now(),
   };
-
+console.log(newQuizData)
   Quiz.create(newQuizData)
     .then((quiz) => {
       return res.send({
