@@ -8,7 +8,7 @@ COPY . .
 
 RUN npm install --force
 
-RUN npm run build
+RUN npm run start
 
 EXPOSE 3000
 
